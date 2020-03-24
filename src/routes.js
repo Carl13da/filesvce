@@ -9,8 +9,6 @@ const routes = new Router();
 routes.get('/questions', QuestionController.index);
 routes.post('/questions/add', QuestionController.store);
 
-routes.options('/contract', cors());
-routes.options('/contract/add-template', cors());
 routes.post('/contract/add-template', cors(), ContractController.store);
 routes.put('/contract/update', cors(), ContractController.update);
 routes.get('/contract/:id', cors(), ContractController.index);
