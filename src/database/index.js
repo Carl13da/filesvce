@@ -7,7 +7,7 @@ class Database {
 
   mongo() {
     this.mongoConnection = mongoose.connect(
-      'mongodb://localhost:27017/filesvce',
+      'mongodb+srv://admin:PoCContract$123@contract-vqw73.mongodb.net/contract?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
         useFindAndModify: true,
