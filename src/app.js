@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 import routes from './routes';
 
@@ -8,22 +9,7 @@ class App {
   constructor() {
     this.server = express();
 
-    this.server.use(function(req, res, next) {
-      res.setHeader(
-        'Access-Control-Allow-Origin',
-        'https://poc-contrato.herokuapp.com'
-      );
-      res.setHeader(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept'
-      );
-      res.setHeader(
-        'Access-Control-Allow-Methods',
-        'PUT, POST, GET, DELETE, OPTIONS'
-      );
-      res.setHeader('Access-Control-Allow-Credentials', true);
-      next();
-    });
+    this.server.use(cors());
 
     this.middlewares();
     this.routes();
